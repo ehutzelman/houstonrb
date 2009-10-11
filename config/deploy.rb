@@ -7,6 +7,7 @@ set :deploy_via, :remote_cache
 set :deploy_to, "/Users/eric/Projects/#{application}"
 
 set :scm, :git
+set :scm_command, "/usr/local/git/bin/git"
 
 set :domain, "raptor"
 role :app, domain
