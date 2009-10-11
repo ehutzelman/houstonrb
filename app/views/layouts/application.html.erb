@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Houston Ruby Group</title>
+    <meta name="keywords" content="houston ruby rails user group software engineering programming" />
+    <meta name="description" content="Houston area ruby and rails user group" />
+    <meta name="robots" content="all" />
+    <%= stylesheet_link_tag 'screen' %>
+  </head>
+
+  <body id="<%= @bodyid || controller.controller_name %>">
+
+    <div id="logo">
+    	<h1>houston<span style="color:#EC0000">rb</span>.com</h1>
+    	<h2>Houston area <span style="color:#EC0000">Ruby and Rails</span> user group</h2>
+    </div>
+
+    <div id="menu">
+    	<ul>
+    		<li id="homeNav"><%= link_to 'home', root_path %></li> 
+    		<li id="membersNav"><%#= link_to 'members', members_path %></li> 
+    		<li id="discussionNav"><%= link_to 'meetings', pages_path('discussion') %></li>
+    		<li id="discussionNav"><%= link_to 'discussion', pages_path('discussion') %></li>
+    		<li id="booksNav"><%#= link_to 'books', books_path %></li>
+    		<li id="signinNav">
+    		<% if current_user.nil? %>
+    			<%= link_to 'my profile', login_url %>
+    		<% else %>
+    			<%= link_to 'sign out', logout_url %>
+    		<% end %>
+    		</li>
+    	</ul>
+    	<hr />
+    </div>
+
+    <div id="bg">
+    	<div id="page">
+    		<div id="content">
+    			<% if flash[:notice] %>
+    				<div id="notice"><%= flash[:notice] %></div>
+    			<% end %>
+
+    			<%= yield %>
+
+    		</div>
+    		<!-- end #content -->
+		
+    		<div id="sidebar">
+    			<%= yield(:sidebar) || render(:partial => "layouts/sidebar") %>
+    		</div>
+    		<!-- end #sidebar -->
+		
+    		<div style="clear: both; height: 20px;">&nbsp;</div>
+    	</div>
+    	<!-- end #page -->
+    </div>
+    <!-- end #bg -->
+
+    <div id="footer">
+    	<hr />
+    	<p>	Site maintained by <% link_to 'Eric Hutzelman', "http://hutzelman.com" %>.  Design by <a href="http://www.nodethirtythree.com/">NodeThirtyThree</a> for <a href="http://www.freecsstemplates.org/">Free CSS Templates</a>.</p>
+    </div>
+
+  </body>
+
+</html>
