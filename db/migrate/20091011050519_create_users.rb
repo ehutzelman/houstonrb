@@ -7,6 +7,8 @@ class CreateUsers < ActiveRecord::Migration
       t.text :bio
       t.string :url
       t.string :twitter
+      t.boolean :display
+      t.boolean :available
 
       t.datetime :last_login_at          
       t.timestamps

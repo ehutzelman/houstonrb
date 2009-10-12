@@ -7,7 +7,8 @@
     <meta name="keywords" content="houston ruby rails user group software engineering programming" />
     <meta name="description" content="Houston area ruby and rails user group" />
     <meta name="robots" content="all" />
-    <%= stylesheet_link_tag 'screen' %>
+    <%= stylesheet_link_tag 'screen', 'formtastic', 'formtastic_changes' %>
+		<%= javascript_include_tag 'application', :cache => true %>
   </head>
 
   <body id="<%= @bodyid || controller.controller_name %>">
@@ -19,11 +20,11 @@
 
     <div id="menu">
     	<ul>
-    		<li id="homeNav"><%= link_to 'home', root_path %></li> 
-    		<li id="membersNav"><%#= link_to 'members', members_path %></li> 
+    		<li id="homeNav"><%= link_to 'about us', root_path %></li> 
+    		<li id="membersNav"><%= link_to 'members', root_path %></li> 
     		<li id="discussionNav"><%= link_to 'meetings', pages_path('discussion') %></li>
     		<li id="discussionNav"><%= link_to 'discussion', pages_path('discussion') %></li>
-    		<li id="booksNav"><%#= link_to 'books', books_path %></li>
+    		<li id="booksNav"><%= link_to 'library', root_path %></li>
     		<li id="signinNav">
     		<% if current_user.nil? %>
     			<%= link_to 'my profile', login_url %>
@@ -41,9 +42,12 @@
     			<% if flash[:notice] %>
     				<div id="notice"><%= flash[:notice] %></div>
     			<% end %>
-
-    			<%= yield %>
-
+					<div class="post">
+						<h1><%= @title %></h1>
+    				<div class="entry">
+							<%= yield %>
+						</div>
+					</div>
     		</div>
     		<!-- end #content -->
 		
@@ -60,7 +64,7 @@
 
     <div id="footer">
     	<hr />
-    	<p>	Site maintained by <% link_to 'Eric Hutzelman', "http://hutzelman.com" %>.  Design by <a href="http://www.nodethirtythree.com/">NodeThirtyThree</a> for <a href="http://www.freecsstemplates.org/">Free CSS Templates</a>.</p>
+    	<p>	Site created by <%= link_to 'Hutzelman', "http://hutzelman.com" %>.  Design by <a href="http://www.nodethirtythree.com/">NodeThirtyThree</a> for <a href="http://www.freecsstemplates.org/">Free CSS Templates</a>.</p>
     </div>
 
   </body>

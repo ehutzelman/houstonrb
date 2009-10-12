@@ -43,7 +43,6 @@ h2 {
 }
 
 h3 {
-/*	font-size: 13px;*/
 	font-size: 18px;
 }
 
@@ -53,18 +52,6 @@ h4 {
 
 p, ul, ol {
 	margin-bottom: 2em;
-/*	text-align: justify;*/
-/*	line-height: 200%;*/
-	line-height: 170%;
-}
-
-p {
-}
-
-ul {
-}
-
-ol {
 }
 
 a {
@@ -208,6 +195,8 @@ hr {
 #page {
 	width: 800px;
 	margin: 0 auto;
+	line-height: 160%;
+	font-size:1.1em;
 }
 
 /* Content */
@@ -335,14 +324,14 @@ hr {
 
 /* Forms */
 
+/*
 fieldset {
 	border: 0;
 	border-top: 1px solid #000;
-/*	background-color: #f3f3f3;*/
+	background-color: #f3f3f3;
 	padding: 15px;
 	margin: 0 0 25px 0;
 }
-
 fieldset legend {
 	font-family: verdana;
 	font-size: 14px;
@@ -388,6 +377,7 @@ textarea {
 	font-family:arial,helvetica,sans-serif;
 	font-size: 14px;
 }
+*/
 
 input#openid_url {
   background: url(/images/openid-icon-small.gif) no-repeat;
@@ -418,7 +408,7 @@ input#openid_url {
   text-align: left;
   font-weight: bold;
   padding: 5px 5px 5px 15px;
-  font-size: 12px;
+  font-size: 1em;
   margin: -7px;
 /*  background-color: #c00;*/
   color: #c00;
@@ -431,7 +421,7 @@ input#openid_url {
 }
 
 #errorExplanation ul li {
-  font-size: 12px;
+  color: #666;
   list-style: square;
 	margin-left: 20px;
 }

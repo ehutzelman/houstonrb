@@ -33,6 +33,8 @@ ActiveRecord::Schema.define(:version => 20091011050925) do
     t.text     "bio"
     t.string   "url"
     t.string   "twitter"
+    t.boolean  "display"
+    t.boolean  "available"
     t.datetime "last_login_at"
     t.datetime "created_at"
     t.datetime "updated_at"
