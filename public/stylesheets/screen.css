@@ -24,6 +24,7 @@ body {
 #polls #pollsNav a,
 #jobs #jobsNav a,
 #books #booksNav a,
+#profile #profileNav a,
 #discuss #discussionNav a {
 	background: #EC0000 url(/images/img03.gif) repeat-x left bottom;
 }
