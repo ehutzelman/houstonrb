@@ -1,12 +1,5 @@
-<h1>Editing user</h1>
+<% title "update profile" %>
 
-<% form_for(@user) do |f| %>
-  <%= f.error_messages %>
+<%= render 'form' %>
 
-  <p>
-    <%= f.submit 'Update' %>
-  </p>
-<% end %>
-
-<%= link_to 'Show', @user %> |
 <%= link_to 'Back', users_path %>

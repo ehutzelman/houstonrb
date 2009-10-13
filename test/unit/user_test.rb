@@ -4,25 +4,39 @@ class UserTest < ActiveSupport::TestCase
 
   should_validate_presence_of :identity_url, :name, :email
   
-  context "A user being saved" do
+  context "A user being saved with an unformatted URL" do
     setup do
-      @user = Factory :user, :identity_url => 'example.myopenid.com'
+      @user = Factory :user, :url => 'example.myopenid.com'
     end
 
-    should "have their open ID url normalized" do
-      assert_match /^http:\/\//, @user.identity_url
+    should "have their url normalized" do
+      assert_match /^http/i, @user.url
     end
   end
   
   context "An existing user with an open ID url" do
     setup do
-      Factory :user, :identity_url => 'example.myopenid.com'
+      @user = Factory :user, :identity_url => 'example.myopenid.com'
     end
     
     should "not allow a new user with the same open ID url" do
       user = Factory.build(:user, :identity_url => 'example.myopenid.com')
       assert !user.save
       assert !user.errors[:identity_url].nil?
+    end    
+  end
+  
+  context "A user who has opted in for display" do
+    setup do
+      @user = Factory :user, :display => true
+    end
+    
+    should "return a gravatar for the image_url" do
+      assert_match /gravatar/, @user.image_url
+    end
+
+    should "be returned for User#random" do
+      assert_equal @user, User.random
     end
   end
   

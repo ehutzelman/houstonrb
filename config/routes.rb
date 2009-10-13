@@ -41,12 +41,13 @@ ActionController::Routing::Routes.draw do |map|
   # consider removing or commenting them out if you're using named routes and resources.
 
   map.resources :users
-
-  map.root :controller => 'pages'
-  map.pages ':page', :controller => 'pages', :action => 'show' #, :page => /template|discussion/
+  map.resources :sessions
 
   map.login '/login', :controller => 'sessions', :action => 'new'
   map.logout '/logout', :controller => 'sessions', :action => 'destroy'
+
+  map.root :controller => 'pages'
+  map.pages ':page', :controller => 'pages', :action => 'show' #, :page => /template|discussion/
 
   map.connect ':controller/:action/:id'
   map.connect ':controller/:action/:id.:format'

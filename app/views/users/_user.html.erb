@@ -1,0 +1,12 @@
+<div class="member" id="<%= user.id %>">
+	<img src="<%= user.image_url %>"/>
+	<h3 style="float:left"><%= user.name %></h3>
+	<div class="memberLinks">
+		<%= mail_to user.email, "email", :subject => "Houston Ruby Group", :encode => "javascript" %>
+			| <%= link_to_unless user.url.blank?, 'url', user.url %>
+	</div>
+  <br/>
+	<p class="bio">
+		<%= user.bio %>
+	</p>
+</div>

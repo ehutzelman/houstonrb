@@ -1,0 +1,15 @@
+<% title "sign in or sign up" %>
+		
+<p>
+Whether you are a new or existing user, you will need to login with
+an OpenID.  If you do not have an OpenID, you can get one at
+<%= link_to "http://www.myopenid.com", 'http://www.myopenid.com' %>.
+</p>
+
+<% form_tag(sessions_path) do %>
+
+	<label>OpenID URL:</label>
+	<%= text_field_tag "openid_url", params[:openid_url], :size => "28" %>
+  <%= submit_tag "sign in" %>
+
+<% end %>
