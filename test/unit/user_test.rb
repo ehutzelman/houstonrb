@@ -26,9 +26,9 @@ class UserTest < ActiveSupport::TestCase
     end    
   end
   
-  context "A user who has opted in for display" do
+  context "A user who has opted in for display and has a bio" do
     setup do
-      @user = Factory :user, :display => true
+      @user = Factory :user, :display => true, :bio => 'about me'
     end
     
     should "return a gravatar for the image_url" do
