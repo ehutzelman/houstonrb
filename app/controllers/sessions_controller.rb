@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
 
   def open_id_authentication(identity_url)
     authenticate_with_open_id(identity_url, 
-                              :optional => [:fullname, :email]) do |result, identity_url, registration|
+                              :optional => [:fullname, :email]) do |result, identity_url, registration|                                
       if result.successful?
         if @current_user = User.find_by_identity_url(identity_url)        
           successful_login
@@ -28,7 +28,7 @@ class SessionsController < ApplicationController
   end
 
   def successful_login
-    flash[:notice] = "signed in in as #{@current_user.name}"
+    flash[:notice] = "signed in as #{@current_user.name}"
     session[:user_id] = @current_user.id
     redirect_to(root_url)
   end
