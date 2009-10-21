@@ -1,0 +1,27 @@
+<div id="next-meeting" class="box">
+	<h2 class="title">Next Meeting</h2>
+	<div class="content">
+
+		<% if meeting %>
+			<h3>Date</h3>
+			<%= meeting.start_time.strftime('%A, %B %d') %><br/>
+			<%= meeting.start_time.strftime('%I:%M %p') %> - 
+			<%= meeting.end_time.strftime('%I:%M %p') %>
+
+			<br><br>
+			<h3>Topic</h3>
+			<%= meeting.description %>
+
+			<br><br>
+			<h3>Location</h3>
+			<%= meeting.location %>
+			<br/>
+			
+		<% else %>
+			We're sorry, but meeting information could not be retrieved from Google Calendar,
+			please try again later.
+		<% end %>
+		
+	</div>
+</div>
+<!-- end #next-meeting -->
