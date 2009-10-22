@@ -1,2 +1,2 @@
-ruby-openid
-justinfrench-formtastic --source gems.github.com
+ruby-openid --source gemcutter.org
+formtastic --source gemcutter.org
