@@ -9,8 +9,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :twitter
       t.boolean :display
       t.boolean :available
-
-      t.datetime :last_login_at          
+      t.datetime :last_login_at
       t.timestamps
     end
   end

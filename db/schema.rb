@@ -9,7 +9,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091011050925) do
+ActiveRecord::Schema.define(:version => 20091022041636) do
+
+  create_table "meetings", :force => true do |t|
+    t.string   "title"
+    t.string   "description"
+    t.string   "location"
+    t.datetime "start_at"
+    t.datetime "end_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "open_id_authentication_associations", :force => true do |t|
     t.integer "issued"

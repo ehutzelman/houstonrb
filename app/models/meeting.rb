@@ -1,52 +1,39 @@
 require 'uri'
 require 'open-uri'
 
-class Meeting
-  attr_accessor :title, :description, :location, :start_time, :end_time
-  cattr_accessor :meetings
+class Meeting < ActiveRecord::Base
+
+  class << self
+    def next_meeting
+      find(:first, :conditions => ["end_at > ?", Time.now], :order => :start_at)
+    end
   
-  def initialize(title, description, location, start_time, end_time)
-    @title = title
-    @description = description || title
-    @location = location
-    @start_time = Time.zone.parse(start_time) 
-    @end_time = Time.zone.parse(end_time)
-  end
+    def refresh_from_calendar
+      Meeting.delete_all
+      entries = REXML::Document.new(meetings_xml).elements.to_a("//entry")
+      entries[0..9].each_with_index do |element, index|
+        create_meeting_from_xml(element, index + 1)
+      end    
+    end
+
+    private
     
-  def self.all
-    meetings
-  end
-  
-  def self.next
-    meetings.first
-  end
-  
-  def self.reload
-    @@meetings = []
-    doc = REXML::Document.new(meetings_xml).elements.to_a("//entry").each do |element|
-      @@meetings << parse_meeting(element)
+    def meetings_xml
+      URI.parse(GOOGLE_CALENDAR_FEED).read
+    end
+
+    def create_meeting_from_xml(xml, id)
+      meeting = Meeting.new
+
+      meeting.id = id
+      meeting.title = xml.elements['title'].text
+      meeting.description = xml.elements['content'].text
+      meeting.location = xml.elements['gd:where'].attributes['valueString']
+      meeting.start_at = xml.elements['gd:when'].attributes['startTime']
+      meeting.end_at = xml.elements['gd:when'].attributes['endTime']
+
+      meeting.save
     end
   end
   
-  private
-
-  def self.meetings
-    reload unless @@meetings 
-    @@meetings
-  end
-
-  def self.meetings_xml
-    URI.parse(GOOGLE_CALENDAR_FEED).read
-  end
-  
-  def self.parse_meeting(xml)
-    title = xml.elements['title'].text
-    description = xml.elements['content'].text
-    location = xml.elements['gd:where'].attributes['valueString']
-    start_time = xml.elements['gd:when'].attributes['startTime']
-    end_time = xml.elements['gd:when'].attributes['endTime']
-
-    Meeting.new(title, description, location, start_time, end_time)    
-  end
-
 end

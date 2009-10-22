@@ -16,5 +16,5 @@ form.formtastic fieldset ol li { font-size: 1.0em;}
 form.formtastic fieldset ol li label { font-weight: normal;}
 form.formtastic fieldset ol li { margin-bottom:1.3em; }
 
-form.formtastic fieldset ol li p.inline-hints { font-size: .9em; color:#999; margin-top:.2em; }
+form.formtastic fieldset ol li p.inline-hints { font-size: .9em; color:#999; margin-top:.2em; line-height:1.2em;}
 form.formtastic fieldset ol li.string input { width:73%; padding:2px; font-size: 1.1em;}
