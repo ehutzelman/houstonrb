@@ -20,8 +20,8 @@ Rails::Initializer.run do |config|
   # config.gem "sqlite3-ruby", :lib => "sqlite3"
   # config.gem "aws-s3", :lib => "aws/s3"
   # config.gem 'chrislloyd-gravtastic', :lib => 'gravtastic', :source => 'http://gems.github.com', :version => '>= 2.0.0'
-  config.gem 'ruby-openid', :lib => false, :version => '>= 2.1.7'
-  config.gem "justinfrench-formtastic", :lib => 'formtastic', :source => 'http://gems.github.com'
+  config.gem 'ruby-openid', :lib => false, :version => '>= 2.1.7', :source => 'http://gemcutter.org'
+  config.gem "formtastic", :source => 'http://gemcutter.org'
   
   # Only load the plugins named here, in the order given (default is alphabetical).
   # :all can be used as a placeholder for all plugins not explicitly named
