@@ -36,3 +36,11 @@ class ActiveSupport::TestCase
 
   # Add more helper methods to be used by all tests here...
 end
+
+# mock retrieval of messages from yahoo groups
+def mock_messages_xml
+  xml = File.open("#{RAILS_ROOT}/test/fixtures/messages.xml") do |f|
+    f.read
+  end
+  Post.expects(:messages_xml).returns(xml)    
+end

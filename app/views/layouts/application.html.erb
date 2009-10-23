@@ -24,7 +24,7 @@
     		<li id="aboutNav"><%= link_to 'about us', root_path %></li> 
     		<li id="usersNav"><%= link_to 'members', users_path %></li> 
     		<li id="meetingsNav"><%= link_to 'meetings', meetings_path %></li>
-    		<li id="discussionNav"><%= link_to 'discussion', pages_path('discussion') %></li>
+    		<li id="discussionNav"><%= link_to 'discussion', posts_path %></li>
     		<li id="booksNav"><%= link_to 'library', root_path %></li>
     		<li id="profileNav"><%= link_to 'my profile', (current_user ? edit_user_path(current_user) : login_path) %>
     		</li>

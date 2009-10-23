@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+  <channel>
+    <title>Houston-RoR at Yahoo! Groups</title>
+    <link>http://tech.groups.yahoo.com/group/Houston-RoR/</link>
+    <description>Houston.rb--Ruby and Rails Users</description>
+
+    <item>
+      <title>Re: Testing - please ignore</title>
+      <pubDate>Fri, 23 Oct 2009 17:34:52 GMT</pubDate>
+      <dc:creator>Wes Gamble</dc:creator>
+      <link>http://tech.groups.yahoo.com/group/Houston-RoR/message/2001</link>
+      <guid isPermaLink="true">http://tech.groups.yahoo.com/group/Houston-RoR/message/2001</guid>
+      <description>http://despair.com/consulting.html Wait - did I say that out loud...? W</description>
+    </item>
+    <item>
+      <title>Re: Testing - please ignore</title>
+      <pubDate>Fri, 23 Oct 2009 17:32:05 GMT</pubDate>
+      <dc:creator>Keith Lancaster</dc:creator>
+      <link>http://tech.groups.yahoo.com/group/Houston-RoR/message/2000</link>
+      <guid isPermaLink="true">http://tech.groups.yahoo.com/group/Houston-RoR/message/2000</guid>
+      <description>Its way overrated. To paraphrase, &quot;Create the bugs and let the customer sort them out...&quot;</description>
+    </item>
+    <item>
+      <title>Part-time Rails dev help needed</title>
+      <pubDate>Fri, 23 Oct 2009 17:31:12 GMT</pubDate>
+      <dc:creator>Keith Lancaster</dc:creator>
+      <link>http://tech.groups.yahoo.com/group/Houston-RoR/message/1999</link>
+      <guid isPermaLink="true">http://tech.groups.yahoo.com/group/Houston-RoR/message/1999</guid>
+      <description>If you are interested in doing part-time Rails work, please contact me off-list at klancaster1957@.... I have a few projects either ongoing or in the works</description>
+    </item>
+    <item>
+      <title>Re: Testing - please ignore</title>
+      <pubDate>Fri, 23 Oct 2009 17:25:59 GMT</pubDate>
+      <dc:creator>Brett A. Rogers</dc:creator>
+      <link>http://tech.groups.yahoo.com/group/Houston-RoR/message/1998</link>
+      <guid isPermaLink="true">http://tech.groups.yahoo.com/group/Houston-RoR/message/1998</guid>
+      <description>I cannot, in good conscience, ignore testing. My apologies, Brett</description>
+    </item>
+    <item>
+      <title>Testing - please ignore</title>
+      <pubDate>Fri, 23 Oct 2009 17:24:19 GMT</pubDate>
+      <dc:creator>Keith Lancaster</dc:creator>
+      <link>http://tech.groups.yahoo.com/group/Houston-RoR/message/1997</link>
+      <guid isPermaLink="true">http://tech.groups.yahoo.com/group/Houston-RoR/message/1997</guid>
+    </item>
+
+  </channel>
+</rss>
+<!-- wr1.grp.sp2.yahoo.com uncompressed/chunked Fri Oct 23 14:45:41 PDT 2009 -->
