@@ -1,4 +1,3 @@
-require 'rss'
 require 'open-uri'
 
 class Post
@@ -6,24 +5,28 @@ class Post
 
   RSS_URL = "http://rss.groups.yahoo.com/group/Houston-RoR/rss"
   
-  def initialize(item)
-    self.title = item.title
-    self.author = item.dc_creator
-    self.description = item.description
-    self.url = item.link
-    self.created_at = Time.parse(item.pubDate.to_s)
-  end
-  
   def self.all
     posts = []
-    RSS::Parser.parse(messages_xml, false).items.each_with_index do |item, i|
-      posts << Post.new(item)
-    end  
+    REXML::Document.new(messages_xml).elements.to_a("//item").each do |element|
+      posts << create_post_from_xml(element)
+    end
+    
     posts
   end
 
   def self.messages_xml
     URI.parse(RSS_URL).read
+  end
+  
+  def self.create_post_from_xml(xml)
+    post = Post.new
+    post.title = xml.elements['title'].text
+    post.description = xml.elements['description'].text rescue nil
+    post.created_at = Time.parse(xml.elements['pubDate'].text)
+    post.author = xml.elements['dc:creator'].text
+    post.url = xml.elements['link'].text
+
+    post
   end
   
 end
