@@ -1,1 +1,15 @@
-<%= meeting.title %>
+<div style="float:left; background: #f3f3f3; text-align:center; width: 165px;border:1px solid #999; padding:20px; margin:20px;">
+	<h3>Date</h3>
+	<%= meeting.start_at.strftime('%A, %B %d') %><br/>
+	<%= meeting.start_at.strftime('%I:%M %p') %> - 
+	<%= meeting.end_at.strftime('%I:%M %p') %>
+
+	<br/><br/>
+	<h3>Topic</h3>
+	<%= meeting.description %>
+
+	<br/><br/>
+	<h3>Location</h3>
+	<%= format_address(meeting.location) %>
+	<br/>
+</div>

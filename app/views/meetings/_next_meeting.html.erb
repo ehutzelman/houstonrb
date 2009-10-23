@@ -1,21 +1,23 @@
-<div id="next-meeting" class="box">
+<div id="meeting" class="box">
 	<h2 class="title">Next Meeting</h2>
-	<div class="content">
+	<div class="content"> 
 
 		<% if meeting = Meeting.next_meeting %>
+      
 			<h3>Date</h3>
 			<%= meeting.start_at.strftime('%A, %B %d') %><br/>
 			<%= meeting.start_at.strftime('%I:%M %p') %> - 
 			<%= meeting.end_at.strftime('%I:%M %p') %>
 
-			<br><br>
+			<br/><br/>
 			<h3>Topic</h3>
 			<%= meeting.description %>
 
-			<br><br>
+			<br/><br/>
 			<h3>Location</h3>
-			<%= meeting.location %>
+			<%= format_address(meeting.location) %>
 			<br/>
+		  <%= image_tag "http://maps.google.com/maps/api/staticmap?center=#{CGI::escape(meeting.location)}&zoom=11&size=165x165&maptype=roadmap&sensor=false&markers=color:red|label:R|#{CGI::escape(meeting.location)}&sensor=false&key=#{GOOGLE_MAPS_KEY}" %>
 		
 		<% else %>
 			We're sorry, but meeting information could not be retrieved from Google Calendar,

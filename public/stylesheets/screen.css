@@ -282,9 +282,13 @@ hr {
 	color: #4A5157;
 }
 
-#next-meeting .content {
+#meeting .content {
 	text-align: center;
 	font-size: 14px;
+}
+
+#meeting .content img {
+	border: 1px solid #ff0000;
 }
 
 .box {

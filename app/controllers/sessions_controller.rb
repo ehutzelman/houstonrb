@@ -28,7 +28,7 @@ class SessionsController < ApplicationController
   end
 
   def successful_login
-    flash[:notice] = "signed in as #{@current_user.name}"
+    flash[:notice] = "Signed in as #{@current_user.name}"
     session[:user_id] = @current_user.id
     redirect_to(root_url)
   end
