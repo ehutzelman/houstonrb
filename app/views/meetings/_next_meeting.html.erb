@@ -15,10 +15,11 @@
 
 			<br/><br/>
 			<h3>Location</h3>
-			<%= format_address(meeting.location) %>
+			<%= format_address_for_display(meeting.location) %>
 			<br/>
-		  <%= image_tag "http://maps.google.com/maps/api/staticmap?center=#{CGI::escape(meeting.location)}&zoom=11&size=165x165&maptype=roadmap&sensor=false&markers=color:red|label:R|#{CGI::escape(meeting.location)}&sensor=false&key=#{GOOGLE_MAPS_KEY}" %>
-		
+			<% link_to "http://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=#{format_address_for_map_url(meeting.location)}&ie=UTF8&hq=&hnear=#{format_address_for_map_url(meeting.location)}&z=13" do %>
+		    <%= image_tag "http://maps.google.com/maps/api/staticmap?center=#{format_address_for_map_url(meeting.location)}&zoom=11&size=165x165&maptype=roadmap&sensor=false&markers=color:red|label:R|#{CGI::escape(meeting.location)}&sensor=false&key=#{GOOGLE_MAPS_KEY}" %>
+		  <% end %>
 		<% else %>
 			We're sorry, but meeting information could not be retrieved from Google Calendar,
 			please try again later.
