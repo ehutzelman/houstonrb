@@ -1,9 +1,9 @@
-<div class="author"><%= post.author %></div>  
+<div class="date"><%= post.created_at.to_s(:us_with_time) %></div>  
 <h3>
-  <span class="date">[<%= post.created_at.to_s(:us) %>]</span> 
+  <div class="date"></div>
   <%= link_to post.title, post.url %>
 </h3>
 <hr />
-<div class="body"><%= post.description %></div>
+<div class="body"><%= post.description %> <strong>[<%= post.author %>]</strong></div>
 
 <p/>

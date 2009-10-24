@@ -25,7 +25,7 @@ body {
 #jobs #jobsNav a,
 #books #booksNav a,
 #profile #profileNav a,
-#discuss #discussionNav a {
+#posts #postsNav a {
 	background: #EC0000 url(/images/img03.gif) repeat-x left bottom;
 }
 
@@ -86,7 +86,7 @@ hr {
 	margin-bottom:10px;	
 }
 
-/* Forum Messages */
+/* discussion messages */
 
 .message h3 {
 	font-size:1.0em;
@@ -97,10 +97,10 @@ hr {
 }
 
 .message h3 .date {
-	font-size:.9em;
-	color: #777;
+	font-size:.7em;
+	color: #999;
 }
-.message .author {
+.message .date {
 	float: right;
 	font-size:.9em;
 	color: #777;
@@ -113,7 +113,7 @@ hr {
 
 .message .body {
 	margin-left:10px;
-	margin-right:100px;
+	margin-right:10px;
 }
 
 /* Members */
@@ -431,9 +431,10 @@ input#openid_url {
 
 .book_image
 {
-	border: 0px;
+	width: 122px;
+	border: 1px solid #aaa;
 	float: left;
-	padding-right:15px;
+	margin-right:15px;
 	margin-bottom:20px;
 }
 
