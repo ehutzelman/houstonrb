@@ -1,2 +1,3 @@
 ruby-openid --source gemcutter.org
 formtastic --source gemcutter.org
+amazon-ecs --source gemcutter.org
