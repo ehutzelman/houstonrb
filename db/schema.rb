@@ -9,7 +9,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091022041636) do
+ActiveRecord::Schema.define(:version => 20091024034229) do
+
+  create_table "books", :force => true do |t|
+    t.string   "asin"
+    t.string   "title"
+    t.string   "authors"
+    t.string   "url"
+    t.string   "image_url"
+    t.datetime "published_at"
+    t.boolean  "available"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "meetings", :force => true do |t|
     t.string   "title"

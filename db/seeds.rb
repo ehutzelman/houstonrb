@@ -5,3 +5,9 @@
 #   
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Major.create(:name => 'Daley', :city => cities.first)
+
+Book.delete_all
+book_asins = ['0596523696', '0596527314', '0596527462', '0596101325', '0596101996']
+book_asins.each do |asin|
+  Book.create(:asin => asin)
+end

@@ -1,0 +1,9 @@
+<p style="clear:both"/>
+<%= link_to(image_tag(book.image_url, :class => 'book_image'), book.url) %>
+<b><%= link_to(book.title, book.url) %></b>
+<br/>
+<b>Authors:</b>
+<%= book.authors %>
+<br/>
+<b>Published:</b>
+<%= book.published_at.to_s(:us) %>
