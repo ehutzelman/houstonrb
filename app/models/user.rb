@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
   validates_uniqueness_of :identity_url, :case_sensitive => false
   before_validation :normalize_url
 
+  default_scope :order => 'created_at'
   named_scope :displayable, :conditions => ["display = ? and bio <> ''", true]
   
   def image_url
