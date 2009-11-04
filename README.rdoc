@@ -27,6 +27,9 @@ The contents of this file should resemble the following, with your keys inserted
 
 === Gem dependencies
 
+These dependencies are specified in the environment files as well as the .gems manifest
+for heroku:
+
 * formtastic
 * ruby-openid
 * amazon-ecs
