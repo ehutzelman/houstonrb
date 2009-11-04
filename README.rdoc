@@ -7,7 +7,7 @@ found at houstonrb.com[http://www.houstonrb.com].
 
 Clone the repository from github:
 
-	git clone git://github.com/ehutzelman/houstonrb.git
+ git clone git://github.com/ehutzelman/houstonrb.git
 
 === Setting up environment
 
@@ -17,13 +17,13 @@ environment variables to make the site work locally.
 Create the following file to hold your local environment variables (this file will be loaded
 by environment.rb):
 
-	/houstonrb/config/heroku_env.rb
+ /houstonrb/config/heroku_env.rb
 	
 The contents of this file should resemble the following, with your keys inserted:
 
-	ENV['GOOGLE_MAPS_KEY']    = "sekrit"
-	ENV['AMAZON_DEV_TOKEN']   = "sekrit"
-	ENV['AMAZON_SECRET']      = "sekrit"
+ ENV['GOOGLE_MAPS_KEY']    = "sekrit"
+ ENV['AMAZON_DEV_TOKEN']   = "sekrit"
+ ENV['AMAZON_SECRET']      = "sekrit"
 
 === Gem dependencies
 
