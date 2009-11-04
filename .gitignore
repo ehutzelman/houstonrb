@@ -4,4 +4,4 @@ db/*.sqlite3
 *.DS_Store
 public/system
 coverage
-config/application.yml
+config/heroku_env.rb
