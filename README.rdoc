@@ -1,0 +1,38 @@
+= Houston.rb
+
+This is the source code for the Houston Ruby Group website which can be
+found at houstonrb.com[http://www.houstonrb.com].
+
+== Contributing
+
+Clone the repository from github:
+
+ git clone git://github.com/ehutzelman/houstonrb.git
+
+=== Setting up environment
+
+The site is currently hosted with heroku, so it will be necessary to populate some
+environment variables to make the site work locally.
+
+Create the following file to hold your local environment variables (this file will be loaded
+by environment.rb):
+
+ /houstonrb/config/heroku_env.rb
+	
+The contents of this file should resemble the following, with your keys inserted:
+
+ ENV['GOOGLE_MAPS_KEY']    = "sekrit"
+ ENV['AMAZON_DEV_TOKEN']   = "sekrit"
+ ENV['AMAZON_SECRET']      = "sekrit"
+
+=== Gem dependencies
+
+These dependencies are specified in the environment files as well as the .gems manifest
+for heroku:
+
+* formtastic
+* ruby-openid
+* amazon-ecs
+* shoulda
+* factory_girl
+* mocha
