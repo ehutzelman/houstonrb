@@ -5,9 +5,9 @@
 		<% if meeting = Meeting.next_meeting %>
       
 			<h3>Date</h3>
-			<%= meeting.start_at.strftime('%A, %B %d') %><br/>
-			<%= meeting.start_at.strftime('%I:%M %p') %> - 
-			<%= meeting.end_at.strftime('%I:%M %p') %>
+			<%= meeting.start_at.to_s(:medium_day) %><br/>
+			<%= meeting.start_at.to_s(:time) %> - 
+			<%= meeting.end_at.to_s(:time) %>
 
 			<br/><br/>
 			<h3>Topic</h3>
