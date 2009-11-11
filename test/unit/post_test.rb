@@ -22,13 +22,4 @@ class PostTest < ActiveSupport::TestCase
     end
   end
   
-  private
-  
-  def mock_messages_xml
-    xml = File.open("#{RAILS_ROOT}/test/fixtures/messages.xml") do |f|
-      f.read
-    end
-    Post.expects(:messages_xml).returns(xml)    
-  end
-  
 end

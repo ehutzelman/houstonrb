@@ -38,6 +38,10 @@ class UserTest < ActiveSupport::TestCase
     should "be returned for User#random" do
       assert_equal @user, User.random
     end
+    
+    should "be included in the displayable named scope" do
+      assert_equal @user, User.displayable.first
+    end
   end
   
 end
