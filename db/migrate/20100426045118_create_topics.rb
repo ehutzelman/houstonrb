@@ -4,7 +4,7 @@ class CreateTopics < ActiveRecord::Migration
       t.string :description
       t.integer :requester_user_id
       t.integer :presenter_user_id
-      t.bool :is_active
+      t.boolean :is_active, :default => true
       
       t.timestamps
     end
