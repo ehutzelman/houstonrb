@@ -477,3 +477,14 @@ input#openid_url {
   background-color: red;
 */  display: inline;
 }
+
+#topic_form textarea {
+  font-size:1.4em;
+}
+
+#topic_form {
+  background:#f3f3f3;
+  border:1px solid #999;
+  padding:10px 20px;
+  display:none;
+}

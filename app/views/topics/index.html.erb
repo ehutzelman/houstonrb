@@ -1,12 +1,34 @@
 <% title "meeting topics", "topics" %>
 
-<div style="background:#f3f3f3;border:1px solid #999;padding:20px">
-	I would like to present the topic:<br/>
-	<textarea rows=5 cols=60></textarea>
-</div>
+Members may vote on topics for upcoming meetings as well as volunteer to present topics.  If you would
+like to learn more about a specific topic, request it here and maybe somebody would be willing to present it.
 
-<p/>
+<br/>
 
-<%= render :partial => 'topic' %>
-<%= render :partial => 'topic' %>
-<%= render :partial => 'topic' %>
+<% if current_user %>
+  <a href="#" id="present" class="present_option">present a topic</a> | 
+  <a href="#" id="request" class="present_option">request a topic</a>
+<% else %>
+  <%= link_to 'Sign in to request and vote on topics.', login_path %>
+<% end %>
+
+<% form_tag topics_path, :id => 'topic_form' do %>
+	I would like to <span id="box_label"></span>:<br/>
+	<%= hidden_field_tag 'user_will_present' %>
+	<%= text_area_tag 'description', nil, :cols => '37', :rows => '2' %>
+	<%= submit_tag 'Submit Your Topic' %>
+<% end %>
+
+<%= render @topics %>
+
+<script type="text/javascript" charset="utf-8">
+  
+  $(document).ready(function() {
+    $(".present_option").click(function() {
+      $("#user_will_present").val($(this).attr("id") == 'present')
+      $("#box_label").text($(this).text())
+      $("#topic_form").slideDown();
+    })
+  })
+  
+</script>

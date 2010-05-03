@@ -1,12 +1,38 @@
-<div>
-	<div style="float:left;background:#ffeeaa;border:1px solid #999;padding:5px;width:30px;text-align:center;margin-right:10px">
-		<span style="font-size:1.5em;font-weight:bold;color:#333;text-align:center">84</span>
-		<div style="margin-top:-8px;color:#666;font-size:.8em">votes</div>
+<div style="float:left;margin-top:15px">
+
+	<div style="float:left;margin-right:10px;text-align:center">
+  	<div style="background:#ffeeaa;border:1px solid #999;padding:5px;width:30px;text-align:center;margin-bottom:-5px">
+  		<span style="font-size:1.5em;font-weight:bold;color:#333;text-align:center"><%= topic.topic_votes_count %></span>
+  		<div style="margin-top:-8px;color:#666;font-size:.8em">votes</div>
+  	</div>
+  	<span style="font-size:.9em">
+    	<% if current_user && !topic.topic_votes.find_by_user_id(current_user) %>
+    	  <%= link_to('vote', vote_topic_path(topic), :method => :post) %>
+    	<% else %>
+    	  &nbsp;
+  	  <% end %>
+	  </span>
 	</div>
-	<div style="float:left;width:440px;font-size:1.2em;font-weight:bold">Why would you want to use reddis?</div>
+	
+	<div style="float:left;width:440px;font-size:1.2em;font-weight:bold">
+	  <%= topic.description %>  
+	</div>
 	
 	<br/>
-	<span style="font-size:.8em;color:#666">presenter: Eric Hutzelman</span>
+	
+	<span style="font-size:.8em;color:#666">
+	  <% if current_user && topic.presenter == current_user %>
+	    You are the presenter for this topic, need to cancel?
+      <%= link_to('remove topic', topic_path(topic), :method => :delete, :confirm => "Are you sure you want to delete this topic?") if current_user == topic.presenter || current_user == topic.requester %>
+	  <% elsif topic.presenter %>
+      Presenter: <%= link_to topic.presenter.name, users_path(:anchor => topic.presenter.id) %>
+	  <% elsif current_user %>
+      <%= link_to 'volunteer to present', volunteer_topic_path(topic), :method => :put, :confirm => 'You will be assigned as presenter for this topic' %>
+    <% else %>
+      <%= link_to 'sign in', login_path %> and volunteer to present
+	  <% end %>
+	</span>
+
 </div>
 
-<br style:"clear:both"/>
+<br style="clear:both;"/>

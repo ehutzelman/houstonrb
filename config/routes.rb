@@ -44,7 +44,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :meetings, :collection => {:refresh => :get}
   map.resources :posts
   map.resources :books
-  map.resources :topics
+  map.resources :topics, :member => {:vote => :post, :volunteer => :put}
   
   map.login '/login', :controller => 'sessions', :action => 'new'
   map.logout '/logout', :controller => 'sessions', :action => 'destroy'
