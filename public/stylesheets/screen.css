@@ -22,6 +22,7 @@ body {
 #about #aboutNav a,
 #users #usersNav a,
 #meetings #meetingsNav a,
+#topics #topicsNav a,
 #jobs #jobsNav a,
 #books #booksNav a,
 #profile #profileNav a,
@@ -475,4 +476,65 @@ input#openid_url {
 /*  padding: 2px;
   background-color: red;
 */  display: inline;
+}
+
+#topic_form textarea {
+  font-size:1.4em;
+}
+
+#topic_form {
+  background:#f3f3f3;
+  border:1px solid #999;
+  padding:10px 20px;
+  display:none;
+}
+
+#topic_form textarea {
+  width:450px;
+	font-family: verdana, arial;
+}
+
+.topic {
+	float:left;
+	margin-top:15px;
+}
+
+.topic .description {
+	float:left;
+	width:440px;
+	font-size:1.2em;
+	font-weight:bold;
+}
+
+.topic .presenter_label {
+	font-size:.8em;
+	color:#666;
+}
+
+.topic .votes {
+	float:left;
+	margin-right:10px;
+	text-align:center;
+}
+
+.topic .vote_box {
+	background:#ffeeaa;
+	border:1px solid #999;
+	padding:5px;
+	width:30px;
+	text-align:center;
+	margin-bottom:-5px;
+}
+
+.topic .vote_box strong {
+	font-size:1.5em;
+	font-weight:bold;
+	color:#333;
+	text-align:center;
+}
+
+.topic .vote_box .label {
+	margin-top:-8px;
+	color:#666;
+	font-size:.8em;
 }

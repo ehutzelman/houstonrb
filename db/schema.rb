@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091024034229) do
+ActiveRecord::Schema.define(:version => 20100501221601) do
 
   create_table "books", :force => true do |t|
     t.string   "asin"
@@ -46,6 +46,23 @@ ActiveRecord::Schema.define(:version => 20091024034229) do
     t.integer "timestamp",  :null => false
     t.string  "server_url"
     t.string  "salt",       :null => false
+  end
+
+  create_table "topic_votes", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "topic_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "topics", :force => true do |t|
+    t.string   "description"
+    t.integer  "requester_user_id"
+    t.integer  "presenter_user_id"
+    t.boolean  "is_active",         :default => true
+    t.integer  "topic_votes_count", :default => 0
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", :force => true do |t|

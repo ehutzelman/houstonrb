@@ -37,6 +37,10 @@ class ActiveSupport::TestCase
   # Add more helper methods to be used by all tests here...
 end
 
+def login_as(user)
+  @request.session[:user_id] = user ? user.id : nil
+end
+
 # mock retrieval of messages from yahoo groups
 def mock_messages_xml
   xml = File.open("#{RAILS_ROOT}/test/fixtures/messages.xml") do |f|
