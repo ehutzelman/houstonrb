@@ -21,7 +21,7 @@ class TopicsController < ApplicationController
   end
   
   def destroy
-    @topic = Topic.find(params[:id])
+    @topic = Topic.find_by_id_and_presenter_user_id(params[:id], current_user.id)
     @topic.destroy
     
     flash[:notice] = "Topic has been removed"
@@ -30,7 +30,8 @@ class TopicsController < ApplicationController
   
   def vote
     @topic = Topic.find(params[:id])
-    @topic.topic_votes.create(:user_id => current_user.id)
+    @topic_vote = TopicVote.find_by_topic_id_and_user_id(@topic.id, current_user.id)
+    @topic.topic_votes.create(:user_id => current_user.id) if !@topic_vote
     
     flash[:notice] = "Your vote has been recorded"
     redirect_to topics_path
