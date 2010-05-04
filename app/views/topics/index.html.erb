@@ -15,7 +15,7 @@ like to learn more about a specific topic, request it here and maybe somebody wo
 <% form_tag topics_path, :id => 'topic_form' do %>
 	I would like to <span id="box_label"></span>:<br/>
 	<%= hidden_field_tag 'user_will_present' %>
-	<%= text_area_tag 'description', nil, :cols => '37', :rows => '2' %>
+	<%= text_area_tag 'description', nil, :rows => '2' %><br/>
 	<%= submit_tag 'Submit Your Topic' %>
 <% end %>
 

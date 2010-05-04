@@ -489,6 +489,11 @@ input#openid_url {
   display:none;
 }
 
+#topic_form textarea {
+  width:450px;
+	font-family: verdana, arial;
+}
+
 .topic {
 	float:left;
 	margin-top:15px;
