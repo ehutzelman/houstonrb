@@ -6,7 +6,7 @@
   		<div class="label">votes</div>
   	</div>
   	<span style="font-size:.9em">
-    	<% if current_user && !topic.topic_votes.find_by_user_id(current_user) %>
+			<% if current_user && !topic.has_user_vote(current_user) %>
     	  <%= link_to('vote', vote_topic_path(topic), :method => :post) %>
     	<% else %>
     	  &nbsp;

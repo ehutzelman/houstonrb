@@ -8,60 +8,61 @@
     <meta name="description" content="Houston area ruby and rails user group" />
     <meta name="robots" content="all" />
     <%= stylesheet_link_tag 'screen', 'formtastic', 'formtastic_changes' %>
-		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
-		<%= javascript_include_tag 'application', :cache => true %>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+    <%= javascript_include_tag 'application', :cache => true %>
   </head>
 
   <body id="<%= @body_id || controller.controller_name %>">
 
     <div id="logo">
-    	<h1>houston<span style="color:#EC0000">rb</span>.com</h1>
-    	<h2>Houston area <span style="color:#EC0000">Ruby and Rails</span> user group</h2>
+      <h1>houston<span style="color:#EC0000">rb</span>.com</h1>
+      <h2>Houston area <span style="color:#EC0000">Ruby and Rails</span> user group</h2>
     </div>
 
     <div id="menu">
-    	<ul>
-    		<li id="aboutNav"><%= link_to 'about us', root_path %></li> 
-    		<li id="usersNav"><%= link_to 'members', users_path %></li> 
-    		<li id="meetingsNav"><%= link_to 'meetings', meetings_path %></li>
-    		<li id="topicsNav"><%= link_to 'topics', topics_path %></li>
-    		<li id="postsNav"><%= link_to 'discussion', posts_path %></li>
-    		<li id="booksNav"><%= link_to 'library', books_path %></li>
-    		<li id="profileNav"><%= link_to 'my profile', (current_user ? edit_user_path(current_user) : login_path) %>
-    		</li>
-    	</ul>
-    	<hr />
+      <ul>
+        <li id="aboutNav"><%= link_to 'about us', root_path %></li>
+        <li id="usersNav"><%= link_to 'members', users_path %></li>
+        <!-- <li id="meetingsNav"><%= link_to 'meetings', meetings_path %></li> -->
+        <li id="chatNav"><%= link_to 'campfire', 'http://zipzoomauto.campfirenow.com/1c8f5' %></li>
+        <li id="topicsNav"><%= link_to 'topics', topics_path %></li>
+        <li id="postsNav"><%= link_to 'discussion', posts_path %></li>
+        <li id="booksNav"><%= link_to 'library', books_path %></li>
+        <li id="profileNav"><%= link_to 'my profile', (current_user ? edit_user_path(current_user) : login_path) %>
+        </li>
+      </ul>
+      <hr />
     </div>
 
     <div id="bg">
-    	<div id="page">
-    		<div id="content">
+      <div id="page">
+        <div id="content">
           <%- flash.each do |name, msg| -%>
             <%= content_tag(:div, msg, :id => "flash_#{name}") if %w(notice error).include?(name.to_s) %>
           <%- end -%>
-					<div class="post">
-						<h1 class="title"><%= @page_title %></h1>
-    				<div class="entry">
-							<%= yield %>
-						</div>
-					</div>
-    		</div>
-    		<!-- end #content -->
-		
-    		<div id="sidebar">
-    			<%= yield(:sidebar) || render(:partial => "layouts/sidebar") %>
-    		</div>
-    		<!-- end #sidebar -->
-		
-    		<div style="clear: both; height: 20px;">&nbsp;</div>
-    	</div>
-    	<!-- end #page -->
+          <div class="post">
+            <h1 class="title"><%= @page_title %></h1>
+            <div class="entry">
+              <%= yield %>
+            </div>
+          </div>
+        </div>
+        <!-- end #content -->
+
+        <div id="sidebar">
+          <%= yield(:sidebar) || render(:partial => "layouts/sidebar") %>
+        </div>
+        <!-- end #sidebar -->
+
+        <div style="clear: both; height: 20px;">&nbsp;</div>
+      </div>
+      <!-- end #page -->
     </div>
     <!-- end #bg -->
 
     <div id="footer">
-    	<hr />
-    	<p>	Site created by <%= link_to 'Hutzelman', "http://www.hutzelman.com" %>.  Design by <a href="http://www.nodethirtythree.com/">NodeThirtyThree</a> for <a href="http://www.freecsstemplates.org/">Free CSS Templates</a>.</p>
+      <hr />
+      <p> Site created by <%= link_to 'Hutzelman', "http://www.hutzelman.com" %>.  Design by <a href="http://www.nodethirtythree.com/">NodeThirtyThree</a> for <a href="http://www.freecsstemplates.org/">Free CSS Templates</a>.</p>
     </div>
 
     <script type="text/javascript">
@@ -74,7 +75,7 @@
     pageTracker._trackPageview();
     } catch(err) {}
     </script>
-    
+
   </body>
 
 </html>

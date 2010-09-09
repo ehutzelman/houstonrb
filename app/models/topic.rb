@@ -7,5 +7,8 @@ class Topic < ActiveRecord::Base
   validates_presence_of :description, :requester_user_id
   
   default_scope :conditions => {:is_active => true}, :order => 'topic_votes_count DESC'
-  
+
+  def has_user_vote(user)
+    topic_votes.find_by_user_id(user)
+  end
 end

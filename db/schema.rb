@@ -12,25 +12,25 @@
 ActiveRecord::Schema.define(:version => 20100501221601) do
 
   create_table "books", :force => true do |t|
-    t.string   "asin"
-    t.string   "title"
-    t.string   "authors"
-    t.string   "url"
-    t.string   "image_url"
-    t.datetime "published_at"
-    t.boolean  "available"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string    "asin"
+    t.string    "title"
+    t.string    "authors"
+    t.string    "url"
+    t.string    "image_url"
+    t.timestamp "published_at"
+    t.boolean   "available"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
   end
 
   create_table "meetings", :force => true do |t|
-    t.string   "title"
-    t.string   "description"
-    t.string   "location"
-    t.datetime "start_at"
-    t.datetime "end_at"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string    "title"
+    t.string    "description"
+    t.string    "location"
+    t.timestamp "start_at"
+    t.timestamp "end_at"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
   end
 
   create_table "open_id_authentication_associations", :force => true do |t|
@@ -66,17 +66,17 @@ ActiveRecord::Schema.define(:version => 20100501221601) do
   end
 
   create_table "users", :force => true do |t|
-    t.string   "identity_url"
-    t.string   "name"
-    t.string   "email"
-    t.text     "bio"
-    t.string   "url"
-    t.string   "twitter"
-    t.boolean  "display"
-    t.boolean  "available"
-    t.datetime "last_login_at"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string    "identity_url"
+    t.string    "name"
+    t.string    "email"
+    t.text      "bio"
+    t.string    "url"
+    t.string    "twitter"
+    t.boolean   "display"
+    t.boolean   "available"
+    t.timestamp "last_login_at"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
   end
 
 end
