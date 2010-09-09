@@ -24,7 +24,9 @@
         <li id="aboutNav"><%= link_to 'about us', root_path %></li>
         <li id="usersNav"><%= link_to 'members', users_path %></li>
         <!-- <li id="meetingsNav"><%= link_to 'meetings', meetings_path %></li> -->
+        <% if current_user %>
         <li id="chatNav"><%= link_to 'campfire', 'http://zipzoomauto.campfirenow.com/1c8f5' %></li>
+        <% end %>
         <li id="topicsNav"><%= link_to 'topics', topics_path %></li>
         <li id="postsNav"><%= link_to 'discussion', posts_path %></li>
         <li id="booksNav"><%= link_to 'library', books_path %></li>
