@@ -15,12 +15,9 @@
   meetings usually consist of a presentation by a member or guest followed by discussion.
   If you can't make it to the meetings, please feel free to join the <%= link_to 'discussion group', posts_path %> and participate.
 </p>
-<p>We now have a
-  <%=
-  link_to_if(current_user, 'Houston.rb campfire chat room', 'http://zipzoomauto.campfirenow.com/1c8f5') do |name|
-    link_to(name, login_path)
-  end
-  %>. Please feel free to drop in if you are coworking or just want to chat with other Houston rubyists.
+<p>
+  We now have a <%= campfire_link %>. Please feel free to drop in if you are coworking or
+  just want to chat with other Houston rubyists.
 </p>
 
 <h2 class="title">how do you join?</h2>
